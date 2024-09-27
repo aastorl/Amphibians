@@ -73,9 +73,8 @@ fun HomeScreen(
     }
 }
 
-/**
- * The home screen displaying the loading message.
- */
+// Mensaje de carga
+
 @Composable
 fun LoadingScreen(modifier: Modifier = Modifier) {
     Image(
@@ -85,9 +84,8 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
     )
 }
 
-/**
- * The home screen displaying error message with re-attempt button.
- */
+// Mensaje de error y la implementacion del boton de reintento
+
 @Composable
 fun ErrorScreen(retryAction: () -> Unit, modifier: Modifier = Modifier) {
     Column(

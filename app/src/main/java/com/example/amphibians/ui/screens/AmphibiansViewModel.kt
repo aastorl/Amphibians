@@ -31,18 +31,16 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 
-/**
- * UI state for the Home screen
- */
+// UI State para la HomeScreen
+
 sealed interface AmphibiansUiState {
     data class Success(val amphibians: List<Amphibian>) : AmphibiansUiState
     object Error : AmphibiansUiState
     object Loading : AmphibiansUiState
 }
 
-/**
- * ViewModel containing the app data and method to retrieve the data
- */
+// ViewModel que contiene los datos de la aplicación y el método para recuperar los datos.
+
 class AmphibiansViewModel(private val amphibiansRepository: AmphibiansRepository) : ViewModel() {
 
     var amphibiansUiState: AmphibiansUiState by mutableStateOf(AmphibiansUiState.Loading)
@@ -65,9 +63,8 @@ class AmphibiansViewModel(private val amphibiansRepository: AmphibiansRepository
         }
     }
 
-    /**
-     * Factory for [AmphibiansViewModel] that takes [AmphibiansRepository] as a dependency
-     */
+    // Factory para [AmphibiansViewModel] que toma [AmphibiansRepository] como dependencia.
+
     companion object {
         val Factory: ViewModelProvider.Factory = viewModelFactory {
             initializer {

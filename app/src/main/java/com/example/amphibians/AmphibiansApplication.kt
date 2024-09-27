@@ -21,7 +21,7 @@ import com.example.amphibians.data.AppContainer
 import com.example.amphibians.data.DefaultAppContainer
 
 class AmphibiansApplication : Application() {
-    /** AppContainer instance used by the rest of classes to obtain dependencies */
+    // Instancia de AppContainer utilizada por el resto de las clases para obtener dependencias.
     lateinit var container: AppContainer
     override fun onCreate() {
         super.onCreate()

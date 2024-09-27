@@ -22,39 +22,33 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 
-/**
- * Dependency Injection container at the application level.
- */
+// Contenedor de inyección de dependencias
+
 interface AppContainer {
     val amphibiansRepository: AmphibiansRepository
 }
+ //  Implementación del contenedor de inyección de dependencias
 
-/**
- * Implementation for the Dependency Injection container at the application level.
- *
- * Variables are initialized lazily and the same instance is shared across the whole app.
- */
+ // Las variables se inicializan de forma perezosa y la misma instancia se comparte en toda la aplicación.
+
 class DefaultAppContainer : AppContainer {
     private val BASE_URL = "https://android-kotlin-fun-mars-server.appspot.com"
 
-    /**
-     * Use the Retrofit builder to build a retrofit object using a kotlinx.serialization converter
-     */
+    //  Utiliza el generador de Retrofit para construir un objeto Retrofit usando un convertidor kotlinx.serialization
+
     private val retrofit: Retrofit = Retrofit.Builder()
         .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
         .baseUrl(BASE_URL)
         .build()
 
-    /**
-     * Retrofit service object for creating api calls
-     */
+    // Objeto de servicio Retrofit para crear llamadas a la API
+
     private val retrofitService: AmphibiansApiService by lazy {
         retrofit.create(AmphibiansApiService::class.java)
     }
 
-    /**
-     * DI implementation for Amphibians repository
-     */
+    // Implementación de inyección de dependencias para el repositorio Amphibians
+
     override val amphibiansRepository: AmphibiansRepository by lazy {
         DefaultAmphibiansRepository(retrofitService)
     }
