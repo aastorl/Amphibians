@@ -5,7 +5,7 @@ Esta aplicación móvil, desarrollada en el marco del curso de Android Developer
 **Tecnologías:**
 * 💬 **Lenguaje de programación:** Kotlin
 * 📱 **UI:** Jetpack Compose y Material Design 3
-* 📐 **Arquitectura:** MVVM 
+* 📐 **Arquitectura:** MVVM e Inyeccion de Dependencias
 * 🌐 **Red:** Retrofit, Kotlin Serialization y Coil
 
 **Características Principales:**
