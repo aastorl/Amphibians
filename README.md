@@ -1,6 +1,6 @@
 🐸 Amphibians
 
-Esta aplicación móvil, desarrollada en el marco del curso de Android Developer de Google, proporciona una informacion amigable para explorar el mundo de los anfibios. Utilizando tecnologías modernas como Jetpack Compose, MVVM , Room y Coil para carga de imagenes.
+Esta aplicación móvil, desarrollada en el marco del curso de Android Developer de Google, proporciona una informacion amigable para explorar el mundo de los anfibios. Utilizando tecnologías modernas como Jetpack Compose, MVVM y Coil para carga de imagenes.
 
 **Tecnologías:**
 * 💬 **Lenguaje de programación:** Kotlin
